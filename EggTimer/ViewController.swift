@@ -1,9 +1,12 @@
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var eggProgress: UIProgressView!
     @IBOutlet weak var topLabel: UILabel!
+    
+    var player: AVAudioPlayer!
     
     let eggTimes = ["Soft": 3, "Medium": 4, "Hard": 7]
     
@@ -50,11 +53,20 @@ class ViewController: UIViewController {
         if secondPassed < totalTime {
             secondPassed += 1
             eggProgress.progress = Float(secondPassed) / Float(totalTime)
-            print(Float(secondPassed) / Float(totalTime))
+//            print(Float(secondPassed) / Float(totalTime))
         } else {
 //            eggProgress.progress = 1
             timer.invalidate()
             topLabel.text = "DONE!"
+            playSound(soundName: "alarm_sound")
         }
+    }
+    
+    func playSound(soundName: String) {
+        // Bundle utk pengaksesan assets
+        // forResource harus String jd menggunakan soundName utk sender.currentTitle dr keyPressed()
+        let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
 }

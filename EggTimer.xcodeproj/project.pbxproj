@@ -61,12 +61,12 @@
 		ADF037EC22D332A800A69E9A /* EggTimer */ = {
 			isa = PBXGroup;
 			children = (
-				ADF037ED22D332A800A69E9A /* AppDelegate.swift */,
 				ADF037EF22D332A800A69E9A /* SceneDelegate.swift */,
 				ADF037F122D332A800A69E9A /* ViewController.swift */,
 				ADF037F322D332A800A69E9A /* Main.storyboard */,
 				ADF037F622D332AD00A69E9A /* Assets.xcassets */,
 				AD5C106522D36212001E14A5 /* alarm_sound.mp3 */,
+				ADF037ED22D332A800A69E9A /* AppDelegate.swift */,
 				ADF037F822D332AD00A69E9A /* LaunchScreen.storyboard */,
 				ADF037FB22D332AD00A69E9A /* Info.plist */,
 			);
